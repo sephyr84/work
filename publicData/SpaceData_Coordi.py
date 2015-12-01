@@ -38,6 +38,7 @@ for i in range(1, x_range):
 		totalCount = rawData['response']['body']['totalCount']
 		baseData = rawData['response']['body']['items']['item']
 		category = unicodedata.normalize('NFKD', baseData[1]['category']).encode('ascii','ignore')
+		fcstValue = str(baseData[1]['fcstValue'])
 		
 		if category == 'PTY':
 			if fcstValue != '-1':
