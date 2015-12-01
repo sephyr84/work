@@ -1,0 +1,4 @@
+#Machine Learning
+#Ch#2, LINEAR ALGEBRA
+
+Frobenius norm: Matrix size 측정 기준, deep learning에서 잘 쓰인다.
