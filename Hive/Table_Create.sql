@@ -5,7 +5,6 @@ CREATE EXTERNAL TABLE IF NOT EXISTS bdc_5.cjk_mart_usr_hdfs (
 	type			STRING,
 	table_name		STRING,
 	SIZE			INT)
-COMMENT 'User hdfs Usage'
+PARTITIONED BY (etl_ym	STRING)
 ROW FORMAT DELIMITED FIELDS TERMINATED BY ','
-PARTITIONED BY (etl_ym)
-LOCATION '/user/b10144880/hdfs_user'
+LOCATION 'hdfs://ndap/user/b10144880/'
