@@ -3,7 +3,7 @@
 CREATE EXTERNAL TABLE IF NOT EXISTS bdc_5.cjk_mart_usr_hdfs (
 	user_name		STRING,
 	type			STRING,
-	schema			STRING,
+	schema_name		STRING,
 	table_name		STRING,
 	SIZE			INT,
 	etl_ym			STRING)
