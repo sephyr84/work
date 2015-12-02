@@ -34,13 +34,13 @@ for i in range(1, x_range):
 		URL = EndpointUrl_ForecastSpaceData + '?ServiceKey=' + ServiceKey + REST +'&_type=json'
 		r = requests.get(URL)
 
-		rawData = json.loads(r.content)		
-		totalCount = rawData['response']['body']['totalCount']
-		baseData = rawData['response']['body']['items']['item']
-		category = unicodedata.normalize('NFKD', baseData[1]['category']).encode('ascii','ignore')
-		fcstValue = str(baseData[1]['fcstValue'])
-		
-		if category == 'PTY':
-			if fcstValue != '-1':
-				cw.writerow([nx, ny])
-
+		if r.status_code == 200:
+			rawData = json.loads(r.content)	
+			totalCount = rawData['response']['body']['totalCount']
+			baseData = rawData['response']['body']['items']['item']
+			category = unicodedata.normalize('NFKD', baseData[1]['category']).encode('ascii','ignore')
+			fcstValue = str(baseData[1]['fcstValue'])
+			
+			if category == 'PTY':
+				if fcstValue != '-1':
+					cw.writerow([nx, ny])
