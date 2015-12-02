@@ -49,7 +49,7 @@ for h in range(0, 23, 3):
 		for k in range(0, totalCount):
 				
 			category = unicodedata.normalize('NFKD', baseData[k]['category']).encode('ascii','ignore')
-			baseTime = unicodedata.normalize('NFKD', baseData[k]['baseTime']).encode('ascii','ignore')
+			baseTime = str(baseData[k]['baseTime'])
 			nx = str(baseData[k]['nx'])
 			ny = str(baseData[k]['ny'])
 			obsrValue = str(baseData[k]['obsrValue'])
